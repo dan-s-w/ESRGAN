@@ -22,6 +22,7 @@ idx = 0
 for path in glob.glob(test_img_folder):
     idx += 1
     base = osp.splitext(osp.basename(path))[0]
+    if base in ['baboon', 'comic']: continue
     print(idx, base)
     # read images
     img = cv2.imread(path, cv2.IMREAD_COLOR)
